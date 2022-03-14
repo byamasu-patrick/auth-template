@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useToken } from '../auth/useToken';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const SignupPage = () => {
     // Define state value
+    const [token, setToken] = useToken();
+
     const [errorMessage, setErrorMessage] = useState('');
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
@@ -10,8 +14,16 @@ const SignupPage = () => {
 
     const history = useNavigate();
 
-    const onSignupClicked = () => {
-        alert("Login not emplemented yet");
+    const onSignupClicked = async () => {
+        
+        const response = await axios.post('/api/signup', {
+            email: emailValue,
+            password: passwordValue,
+        });
+
+        const { token } = response.data;
+        setToken(token);
+        history('/');
     };
 
     return (
