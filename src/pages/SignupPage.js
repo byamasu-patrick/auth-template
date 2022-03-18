@@ -23,7 +23,7 @@ const SignupPage = () => {
 
         const { token } = response.data;
         setToken(token);
-        history('/');
+        history('/please-verify');
     };
 
     return (
