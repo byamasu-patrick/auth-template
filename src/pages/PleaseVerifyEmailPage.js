@@ -1,14 +1,16 @@
 import React, { useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
+import { useQueryParams } from "../util/useQueryParams";
 
 export const PleaseVerifyEmailPage = () => {
     const history = useNavigate();
+    const { email } = useQueryParams();
 
     useEffect(() => {
         setTimeout(() => {
-            history('/');
+            history(`/verify-email?email=${ encodeURIComponent(email) }`);
         }, 3000);
-    }, [history]);
+    }, [history, email]);
 
     return (
         <div className="content-container">

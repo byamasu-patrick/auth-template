@@ -23,7 +23,7 @@ const SignupPage = () => {
 
         const { token } = response.data;
         setToken(token);
-        history('/please-verify');
+        history(`/please-verify?email=${ encodeURIComponent(emailValue) }`);
     };
 
     return (
