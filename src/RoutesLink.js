@@ -21,7 +21,7 @@ export const RoutesLink = () => {
                 <Route path="/verify-email/:verificationString" exact element={<EmailVerificationLandingPage /> }/>
                 <Route path="/verify-email" exact element={<EmailVerificationCodePage /> }/>
                 <Route path="/forgot-password" exact element={<ForgotPasswordPage /> }/>    
-                <Route path="/reset-password/:passwordResetCode" exact element={<PasswordResetLanding /> }/>     
+                <Route path="/reset-password" exact element={<PasswordResetLanding /> }/>     
                 <Route path="/signup-page" exact element={<SignupPage /> }/>
             </Routes>
         </Router>

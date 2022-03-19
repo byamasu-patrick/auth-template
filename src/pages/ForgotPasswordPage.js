@@ -15,7 +15,7 @@ export const ForgotPasswordPage = () => {
 
             setSuccess(true);
             setTimeout(() => {
-                history('/login');
+                history(`/reset-password?email=${encodeURIComponent(emailValue)}`);
             }, 3000);
         } catch (error) {
             setErrorMessage(error.message);
