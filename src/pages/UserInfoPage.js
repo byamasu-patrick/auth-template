@@ -56,6 +56,10 @@ export const UserInfoPage = () => {
             setToken(newToken);
             setShowSuccessMessage(true);
 
+            setFavoriteFood("");
+            setBio("");
+            setHairColor("")
+
         } catch (error) {
             setShowErrorMessage(true);
         }
